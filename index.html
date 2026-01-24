@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alberto Morales | Full Stack Developer</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <a href="#" class="logo">
+                AMB<span class="dot"></span>
+            </a>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-item">Sobre mí</a></li>
+                <li><a href="#skills" class="nav-item">Stack</a></li>
+                <li><a href="#projects" class="nav-item">Proyectos</a></li>
+                <li><a href="#contact" class="btn-primary">Hablemos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-glow"></div>
+
+        <div class="hero-content">
+            <div class="profile-container">
+                <img src="./assests/profile.png" alt="Alberto Morales" class="hero-profile-img">
+            </div>
+
+            <span class="greeting">Hola, soy Alberto Morales 👋</span>
+            <h1>Full Stack Developer</h1>
+            <p>Construyo aplicaciones web escalables uniendo la solidez del <strong>Backend</strong>, la interactividad
+                del <strong>Frontend</strong> y la potencia de la <strong>IA</strong>.</p>
+
+            <div class="hero-btns">
+                <a href="#projects" class="btn">Ver Proyectos</a>
+                <a href="#contact" class="btn-outline">Contactar</a>
+            </div>
+
+            <div class="scroll-down">
+                <i class="fa-solid fa-chevron-down bounce"></i>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Vengo del mundo de la educación y el deporte, sectores que me enseñaron que la constancia y la
+                        comunicación son tan importantes como la técnica. He trasladado esa mentalidad al código.</p>
+                    <p>Soy un desarrollador <strong>Full Stack</strong> versátil. Me siento cómodo diseñando bases de
+                        datos, creando APIs robustas en Python y maquetando interfaces reactivas. Mi objetivo es crear
+                        software limpio, eficiente y útil.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="number">Full</span>
+                        <span class="label">Stack</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">+10</span>
+                        <span class="label">Tecnologías</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">100%</span>
+                        <span class="label">Compromiso</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Mi Arsenal Tecnológico</h2>
+            <div class="skills-wrapper">
+                <div class="skill-category">
+                    <h3><i class="fa-solid fa-laptop-code"></i> Frontend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card"><i class="fa-brands fa-js"></i> JavaScript</div>
+                        <div class="skill-card"><i class="fa-brands fa-angular"></i> Angular</div>
+                        <div class="skill-card"><i class="fa-brands fa-html5"></i> HTML5</div>
+                        <div class="skill-card"><i class="fa-brands fa-css3-alt"></i> CSS3/Sass</div>
+                        <div class="skill-card"><i class="fa-brands fa-bootstrap"></i> Bootstrap</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fa-solid fa-server"></i> Backend & IA</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card"><i class="fa-brands fa-python"></i> Python</div>
+                        <div class="skill-card"><i class="fa-solid fa-bolt"></i> FastAPI</div>
+                        <div class="skill-card"><i class="fa-brands fa-python"></i> Django</div>
+                        <div class="skill-card"><i class="fa-solid fa-brain"></i> LangChain</div>
+                        <div class="skill-card"><i class="fa-solid fa-network-wired"></i> n8n</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fa-solid fa-database"></i> Data & Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card"><i class="fa-solid fa-database"></i> MySQL</div>
+                        <div class="skill-card"><i class="fa-solid fa-leaf"></i> MongoDB</div>
+                        <div class="skill-card"><i class="fa-brands fa-docker"></i> Docker</div>
+                        <div class="skill-card"><i class="fa-brands fa-git-alt"></i> Git</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <div class="projects-container">
+                <article class="project-card">
+                    <div class="card-header">
+                        <div class="folder-icon"><i class="fa-regular fa-folder-open"></i></div>
+                        <div class="links">
+                            <a href="https://github.com/AlberCf" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h4>AI Agents & RAG System</h4>
+                    <p>Sistema de agentes autónomos capaces de leer PDFs y mantener memoria conversacional.</p>
+                    <div class="tags">
+                        <span>Python</span> <span>LangChain</span> <span>OpenAI</span>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="card-header">
+                        <div class="folder-icon"><i class="fa-regular fa-folder-open"></i></div>
+                        <div class="links">
+                            <a href="https://github.com/AlberCf" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h4>API RESTful Management</h4>
+                    <p>Backend completo para gestión de usuarios y productos con autenticación segura.</p>
+                    <div class="tags">
+                        <span>Python</span> <span>FastAPI</span> <span>MySQL</span> <span>Docker</span>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="card-header">
+                        <div class="folder-icon"><i class="fa-regular fa-folder-open"></i></div>
+                        <div class="links">
+                            <a href="https://github.com/AlberCf" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h4>Gestor Web E-Commerce</h4>
+                    <p>Aplicación web con panel de administración, roles de usuario y base de datos relacional.</p>
+                    <div class="tags">
+                        <span>JavaScript</span> <span>HTML/CSS</span> <span>MySQL</span>
+                    </div>
+                </article>
+            </div>
+            <div class="center-btn">
+                <a href="https://github.com/AlberCf" target="_blank" class="btn-outline small">Ver GitHub Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">¿Trabajamos juntos?</h2>
+            <p class="contact-subtitle">Estoy disponible para nuevas oportunidades. Mándame un mensaje.</p>
+
+            <form id="contact-form" action="https://formspree.io/f/xdaajlpz" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" name="name" required placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required placeholder="tucorreo@ejemplo.com">
+                </div>
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea name="message" rows="5" required placeholder="Hola Alberto..."></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar Mensaje</button>
+                <div id="form-status" class="form-status"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/albertofsd/" target="_blank"><i
+                    class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/AlberCf" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="mailto:albertomoralesbarroso@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2026 Alberto Morales.</p>
+    </footer>
+
+    <script src="./JavaScripts/script.js"></script>
+</body>
+
+</html>
