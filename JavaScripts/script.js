@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Reveal on Scroll
+    // Revelar con Scroll
     const revealElements = document.querySelectorAll('.section, .project-card, .skill-card');
     
     const revealOnScroll = () => {
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Init styles for reveal
+    // inicialzar estilos 
     revealElements.forEach(el => {
         el.style.opacity = "0";
         el.style.transform = "translateY(30px)";
@@ -76,7 +76,7 @@ if (contactForm) {
         formStatus.style.display = 'none'; // Ocultar mensajes previos
         formStatus.className = 'form-status'; // Resetear clases
 
-        // 2. Preparar los datos (FormData es más seguro que JSON)
+        // 2. Preparar los datos con FormData
         const formData = new FormData(contactForm);
 
         try {
@@ -85,18 +85,15 @@ if (contactForm) {
                 body: formData,
                 headers: { 
                     'Accept': 'application/json' 
-                    // NO ponemos Content-Type, el navegador lo pone automático con FormData
                 }
             });
 
             if (response.ok) {
-                // ÉXITO
                 formStatus.innerText = "¡Mensaje enviado! Gracias por contactar.";
                 formStatus.className = "form-status success"; 
                 formStatus.style.display = 'block';
-                contactForm.reset(); // Limpia los campos
+                contactForm.reset(); 
             } else {
-                // ERROR DE FORMSPREE
                 const data = await response.json();
                 if (Object.hasOwn(data, 'errors')) {
                     formStatus.innerText = data["errors"].map(error => error["message"]).join(", ");
@@ -107,13 +104,11 @@ if (contactForm) {
                 formStatus.style.display = 'block';
             }
         } catch (error) {
-            // ERROR DE RED
             console.error("Error de envío:", error);
             formStatus.innerText = "Error de conexión. Revisa tu internet.";
             formStatus.className = "form-status error";
             formStatus.style.display = 'block';
         } finally {
-            // Restaurar botón
             submitBtn.innerText = originalBtnText;
             submitBtn.disabled = false;
             

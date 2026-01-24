@@ -79,14 +79,9 @@ img {
 /* --- LOGO "AMB" SUPER PRO --- */
 .logo {
     font-size: 3rem;
-    /* Letra más grande */
     font-weight: 900;
-    /* Extra gruesa (Black) */
     letter-spacing: -1px;
-    /* Letras juntas para estilo moderno */
     font-family: 'Inter', sans-serif;
-
-    /* El truco del degradado animado */
     background: linear-gradient(45deg,
             #64ffda,
             #00b3ff,
@@ -94,13 +89,9 @@ img {
             #64ffda);
     background-size: 300% 300%;
     -webkit-background-clip: text;
-    /* Pinta solo las letras */
     background-clip: text;
     color: transparent;
-    /* Hace el texto transparente para ver el fondo */
-
     animation: gradientFlow 6s ease infinite;
-    /* Se mueve solo */
     display: flex;
     align-items: baseline;
 }
@@ -122,7 +113,6 @@ img {
 
 .logo .dot {
     color: var(--text-primary);
-    /* El punto blanco para contraste */
     font-size: 2.5rem;
     line-height: 0;
     margin-left: 2px;
@@ -204,28 +194,18 @@ img {
     margin-bottom: 35px;
     display: inline-block;
     position: relative;
-    /* Un brillo más intenso */
     filter: drop-shadow(0 0 20px rgba(100, 255, 218, 0.4));
 }
 
 /* --- FOTO DEL HÉROE --- */
 .hero-profile-img {
     width: 230px;
-    /* MÁS GRANDE */
     height: 230px;
     border-radius: 50%;
-
-    /* TRUCO IMPORTANTE: contain para que la imagen quepa entera sin cortarse */
-    /* Como es un PNG transparente, 'cover' a veces corta bordes si no es cuadrado perfecto */
-    /* object-fit: cover es bueno, pero ajustamos position */
     object-fit: cover;
     object-position: center 30%;
-    /* Enfoca un poco más abajo del centro para no cortar pelo */
-
     border: 4px solid var(--accent);
-    /* Borde un pelín más grueso */
     background-color: var(--bg-light);
-    /* Fondo oscuro por seguridad */
     animation: float 6s ease-in-out infinite;
 }
 
