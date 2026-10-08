@@ -1627,30 +1627,6 @@ em {
         #16203a;
 }
 
-.badge-arc {
-    position: absolute;
-    inset: -8px;
-    width: calc(100% + 16px);
-    height: calc(100% + 16px);
-    pointer-events: none;
-}
-
-.arc-band {
-    fill: none;
-    stroke: #0e9f7e;
-    stroke-width: 15;
-    stroke-linecap: round;
-}
-
-.badge-arc text {
-    font-family: var(--mono);
-    font-size: 8.4px;
-    font-weight: 600;
-    letter-spacing: 1.6px;
-    fill: #eafff8;
-    dominant-baseline: middle;
-}
-
 .badge-name {
     padding: 0 18px;
     text-align: center;
