@@ -16,19 +16,51 @@ document.addEventListener('DOMContentLoaded', () => {
         menuToggle.setAttribute('aria-expanded', String(open));
         menuToggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
         document.body.style.overflow = open ? 'hidden' : '';
+        if (open) navbar.classList.remove('hidden');
     };
 
     menuToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
 
-    // Navbar compacta + barra de progreso
+    // Navbar compacta, se oculta al bajar y reaparece al subir + barra de progreso
+    let lastY = window.scrollY;
     const onScroll = () => {
         const y = window.scrollY;
         navbar.classList.toggle('scrolled', y > 20);
+        if (!navLinks.classList.contains('open')) {
+            const goingDown = y > lastY + 4;
+            const goingUp = y < lastY - 4;
+            if (goingDown && y > 600) navbar.classList.add('hidden');
+            else if (goingUp || y < 600) navbar.classList.remove('hidden');
+        }
+        lastY = y;
         const max = document.documentElement.scrollHeight - window.innerHeight;
         progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
     };
+
+    // Reloj en hora de Madrid
+    const navTime = document.getElementById('nav-time');
+    if (navTime) {
+        const fmt = new Intl.DateTimeFormat('es-ES', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' });
+        const tick = () => { navTime.textContent = `Madrid · ${fmt.format(new Date())}`; };
+        tick();
+        setInterval(tick, 15000);
+    }
+
+    // Indicador que se desliza bajo el enlace activo / en hover
+    const indicator = document.getElementById('nav-indicator');
+    const moveIndicator = (el) => {
+        if (!indicator) return;
+        if (!el) { indicator.style.opacity = '0'; return; }
+        indicator.style.width = `${el.offsetWidth}px`;
+        indicator.style.transform = `translateX(${el.offsetLeft}px)`;
+        indicator.style.opacity = '1';
+    };
+    const restIndicator = () => moveIndicator(document.querySelector('.nav-item.active'));
+    document.querySelectorAll('.nav-item').forEach(a => a.addEventListener('mouseenter', () => moveIndicator(a)));
+    navLinks.addEventListener('mouseleave', restIndicator);
+    window.addEventListener('resize', restIndicator);
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
@@ -62,13 +94,39 @@ document.addEventListener('DOMContentLoaded', () => {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;
                 navItems.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${entry.target.id}`));
+                if (!navLinks.matches(':hover')) restIndicator();
             });
+            // Fuera de cualquier sección enlazada (hero, perfil, contacto) no hay activo
+            if (!sections.some(sec => {
+                const r = sec.getBoundingClientRect();
+                return r.top < window.innerHeight * 0.5 && r.bottom > window.innerHeight * 0.5;
+            })) {
+                navItems.forEach(a => a.classList.remove('active'));
+                if (!navLinks.matches(':hover')) restIndicator();
+            }
         }, { rootMargin: '-45% 0px -50% 0px' });
         sections.forEach(s => spy.observe(s));
     }
 
     // Spotlight que sigue al cursor + inclinación 3D de las capturas
     if (finePointer && !reduceMotion) {
+        // Foco de luz en la navbar
+        const shell = document.getElementById('nav-shell');
+        shell.addEventListener('pointermove', (e) => {
+            const r = shell.getBoundingClientRect();
+            shell.style.setProperty('--nx', `${e.clientX - r.left}px`);
+        });
+
+        // Botón "Hablemos" magnético
+        const cta = document.getElementById('nav-cta');
+        cta.addEventListener('pointermove', (e) => {
+            const r = cta.getBoundingClientRect();
+            const dx = e.clientX - (r.left + r.width / 2);
+            const dy = e.clientY - (r.top + r.height / 2);
+            cta.style.transform = `translate(${dx * 0.25}px, ${dy * 0.35}px)`;
+        });
+        cta.addEventListener('pointerleave', () => { cta.style.transform = ''; });
+
         document.querySelectorAll('.project, .bento-card').forEach(card => {
             card.addEventListener('pointermove', (e) => {
                 const r = card.getBoundingClientRect();
