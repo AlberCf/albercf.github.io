@@ -24,10 +24,11 @@
         href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./CSS/style.css?v=11">
+    <link rel="stylesheet" href="./CSS/style.css?v=13">
 </head>
 
 <body>
+    <a class="skip-link" href="#about">Saltar al contenido</a>
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="bg-noise" aria-hidden="true"></div>
     <div class="scroll-progress" aria-hidden="true"></div>
@@ -35,7 +36,7 @@
     <!-- ============ NAV ============ -->
     <nav class="navbar" id="navbar">
         <div class="nav-shell" id="nav-shell">
-            <a href="#top" class="logo" aria-label="Inicio">
+            <a href="#top" class="logo" aria-label="Volver arriba">
                 <span class="logo-mark"><span>AM</span></span>
                 <span class="logo-text">
                     <b>Alberto Morales</b>
@@ -45,10 +46,10 @@
 
             <ul class="nav-links" id="nav-links">
                 <li class="nav-indicator" id="nav-indicator" aria-hidden="true"></li>
-                <li><a href="#projects" class="nav-item" data-num="01"><span data-text="Proyectos">Proyectos</span></a></li>
-                <li><a href="#experience" class="nav-item" data-num="02"><span data-text="Experiencia">Experiencia</span></a></li>
-                <li><a href="#stack" class="nav-item" data-num="03"><span data-text="Stack">Stack</span></a></li>
-                <li><a href="#education" class="nav-item" data-num="04"><span data-text="Formación">Formación</span></a></li>
+                <li><a href="#about" class="nav-item" data-num="01"><span data-text="Sobre mí">Sobre mí</span></a></li>
+                <li><a href="#stack" class="nav-item" data-num="02"><span data-text="Stack">Stack</span></a></li>
+                <li><a href="#projects" class="nav-item" data-num="03"><span data-text="Proyectos">Proyectos</span></a></li>
+                <li><a href="#experience" class="nav-item" data-num="04"><span data-text="Trayectoria">Trayectoria</span></a></li>
                 <li class="nav-mobile-foot">
                     <a href="mailto:albertomoralesbarroso@gmail.com">albertomoralesbarroso@gmail.com</a>
                     <span>
@@ -79,37 +80,31 @@
         <div class="hero-aurora" aria-hidden="true">
             <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
         </div>
+        <div class="hero-outline" id="hero-outline" aria-hidden="true">ALBERTO</div>
 
         <div class="container hero-inner">
             <div class="hero-copy">
-                <a href="#experience" class="status-pill reveal">
-                    <span class="pulse"></span>
-                    <span>AI Developer en <strong>SmartBits</strong> · Madrid</span>
-                </a>
+                <p class="hero-eyebrow reveal">Alberto Morales Barroso <span>· Madrid, España</span></p>
 
                 <h1 class="hero-title reveal">
-                    <span class="line">Alberto Morales.</span>
-                    <span class="line muted">Construyo software</span>
-                    <span class="line muted">con <em>inteligencia.</em></span>
+                    <span class="line">AI Full Stack</span>
+                    <span class="line"><em>Developer.</em></span>
                 </h1>
 
+                <p class="hero-roles reveal">Python / React / LLMs y agentes / Ciberseguridad</p>
+
                 <p class="hero-lead reveal">
-                    <strong>AI Full Stack Developer</strong> especializado en Python, React y desarrollo asistido por IA.
-                    Diseño productos end-to-end, integro LLMs en flujos reales de negocio y blindo código en producción.
+                    Diseño productos de principio a fin, integro modelos de IA en procesos reales de negocio y
+                    blindo código en producción.
                 </p>
 
                 <div class="hero-actions reveal">
-                    <a href="#projects" class="btn btn-primary">Ver proyectos <i class="fa-solid fa-arrow-down"></i></a>
+                    <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+                    <a href="#contact" class="btn btn-ghost">Hablemos</a>
                     <a href="./assests/Alberto_Morales_CV_AI_Full_Stack.pdf" class="btn btn-ghost" download>
-                        <i class="fa-regular fa-file-lines"></i> Descargar CV
+                        CV <i class="fa-solid fa-arrow-down"></i>
                     </a>
                 </div>
-
-                <ul class="hero-meta reveal">
-                    <li><span class="k">Base</span><span class="v">Python · TypeScript</span></li>
-                    <li><span class="k">Foco</span><span class="v">LLMs · Agentes · Seguridad</span></li>
-                    <li><span class="k">Idiomas</span><span class="v">ES nativo · EN profesional</span></li>
-                </ul>
             </div>
 
             <div class="hero-visual reveal">
@@ -157,6 +152,14 @@
             </div>
         </div>
 
+        <div class="container hero-foot">
+            <a href="#experience" class="status-pill">
+                <span class="pulse"></span>
+                <span>Ahora · AI Developer en <strong>SmartBits</strong></span>
+            </a>
+            <a href="#about" class="scroll-cue" aria-label="Bajar a Sobre mí">Scroll <span></span></a>
+        </div>
+
         <div class="marquee" aria-hidden="true">
             <div class="marquee-track">
                 <span>Python</span><span>FastAPI</span><span>Django REST</span><span>React</span><span>Next.js</span>
@@ -170,355 +173,393 @@
     </header>
 
     <main>
-        <!-- ============ ABOUT ============ -->
+        <!-- ============ 01 · SOBRE MÍ ============ -->
         <section class="section about" id="about">
             <div class="container about-grid">
-                <div class="section-head reveal">
-                    <span class="eyebrow">01 — Perfil</span>
-                    <h2>Del aula al <em>código</em>,<br>con la misma obsesión por la claridad.</h2>
-                </div>
-                <div class="about-body reveal">
-                    <p>
-                        Actualmente en <strong>SmartBits Business IT Solutions</strong> modernizo aplicaciones de negocio
-                        legadas, integro modelos LLM en productos corporativos y desarrollo herramientas internas
-                        —plugins, hooks, skills y subagentes autónomos— para auditar y securizar código en producción.
+                <div class="about-copy reveal">
+                    <span class="eyebrow"><b>01</b><i></i>Sobre mí</span>
+                    <h2 class="display">Hola, soy <em>Alberto.</em></h2>
+                    <p class="about-lead">
+                        AI Full Stack Developer con especialización práctica en Python, React y desarrollo asistido por
+                        Inteligencia Artificial. Hoy, en SmartBits, modernizo aplicaciones legadas, integro APIs de LLMs
+                        —OpenAI y Anthropic Claude— y securizo código en producción. Me muevo con soltura entre
+                        arquitecturas limpias, desarrollo end-to-end, ingeniería de datos y automatización.
                     </p>
-                    <p>
-                        Antes trabajé con datos y APIs del sector farmacéutico en <strong>Icon Group</strong>, y antes de
-                        eso fui profesor. Esa etapa me dejó algo que uso cada día: estructurar problemas complejos y
-                        explicarlos de forma que un equipo entero avance en la misma dirección.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat"><span class="n" data-count="3">3</span><span class="l">Productos SaaS propios
-                                publicados</span></div>
-                        <div class="stat"><span class="n">E2E</span><span class="l">Del prototipo en Figma al
-                                despliegue</span></div>
-                        <div class="stat"><span class="n">AI</span><span class="l">LLMs, RAG y agentes en flujos
-                                reales</span></div>
+                    <p class="about-note">Antes fui profesor: aprendí a explicar lo complejo con claridad, y lo aplico
+                        cada día en código, documentación y equipo.</p>
+                    <div class="about-actions">
+                        <a href="./assests/Alberto_Morales_CV_AI_Full_Stack.pdf" class="btn btn-primary" download>CV
+                            <i class="fa-solid fa-arrow-down"></i></a>
+                        <a href="https://github.com/AlberCf" target="_blank" rel="noopener" class="btn btn-ghost">GitHub
+                            <span class="arr">↗</span></a>
+                        <a href="https://www.linkedin.com/in/albertofsd/" target="_blank" rel="noopener"
+                            class="btn btn-ghost">LinkedIn <span class="arr">↗</span></a>
                     </div>
+                </div>
+
+                <!-- Carnet colgante -->
+                <div class="badge-wrap reveal">
+                    <div class="lanyard" aria-hidden="true">
+                        <span>ALBERTO MORALES · AI FULL STACK DEVELOPER · ALBERTO MORALES · AI FULL STACK DEVELOPER ·
+                            ALBERTO MORALES · AI FULL STACK DEVELOPER ·</span>
+                    </div>
+                    <div class="badge-clip" aria-hidden="true"></div>
+                    <div class="badge-swing" id="badge-swing">
+                        <button class="badge" id="badge" type="button" aria-pressed="false"
+                            aria-label="Carnet de Alberto Morales. Pulsa para girarlo">
+                            <span class="badge-inner">
+                                <span class="badge-face badge-front">
+                                    <span class="badge-slot" aria-hidden="true"></span>
+                                    <span class="badge-top"><span>Developer ID</span><span>AM</span></span>
+                                    <span class="badge-photo">
+                                        <img src="./assests/profile-round.png" alt="" width="370" height="370">
+                                        <svg class="badge-arc" viewBox="0 0 120 120" aria-hidden="true">
+                                            <defs>
+                                                <path id="arcPath" d="M 14 60 A 46 46 0 0 0 106 60" />
+                                            </defs>
+                                            <path class="arc-band" d="M 14 60 A 46 46 0 0 0 106 60" />
+                                            <text>
+                                                <textPath href="#arcPath" startOffset="50%" text-anchor="middle">#BUILDWITHAI</textPath>
+                                            </text>
+                                        </svg>
+                                    </span>
+                                    <span class="badge-name">Alberto Morales Barroso</span>
+                                    <span class="badge-role">AI Full Stack Developer</span>
+                                    <span class="badge-data">
+                                        <span><small>ID Nº</small><b>AMB-2026</b></span>
+                                        <span><small>Dept.</small><b>AI &amp; Full Stack</b></span>
+                                        <span><small>Base</small><b>Madrid</b></span>
+                                    </span>
+                                    <span class="badge-bottom">
+                                        <span class="barcode" aria-hidden="true"></span>
+                                        <span class="hologram" aria-hidden="true"></span>
+                                    </span>
+                                </span>
+
+                                <span class="badge-face badge-back">
+                                    <span class="badge-slot" aria-hidden="true"></span>
+                                    <span class="badge-top"><span>Qué hago</span><span>AM</span></span>
+                                    <span class="badge-back-title">En <em>resumen.</em></span>
+                                    <span class="badge-list">
+                                        <span><b>01</b>AI Developer en SmartBits: auditoría y blindaje de código</span>
+                                        <span><b>02</b>Integro LLMs (OpenAI, Claude) en productos reales</span>
+                                        <span><b>03</b>React · Angular · Next.js + FastAPI · Django</span>
+                                        <span><b>04</b>3 SaaS propios: TraineX, Nucleus y SponsorD</span>
+                                        <span><b>05</b>Datos: ETL con Pandas, Salesforce y ServiceNow</span>
+                                    </span>
+                                    <span class="badge-sign">Alberto Morales
+                                        <small>Si me encuentras, escríbeme · albertomoralesbarroso@gmail.com</small>
+                                    </span>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <p class="badge-hint">Pasa el ratón · toca · Enter para girar</p>
+                </div>
+
+                <div class="about-side reveal">
+                    <div class="facts">
+                        <h3 class="mono-label">Datos rápidos</h3>
+                        <dl>
+                            <div><dt>Ubicación</dt><dd>Madrid, España · movilidad geográfica</dd></div>
+                            <div><dt>Formación</dt><dd>Bootcamp Full Stack · Upgrade Hub<br>Grado en Magisterio · U. Nebrija</dd></div>
+                            <div><dt>Actual</dt><dd>AI Developer &amp; Full Stack · SmartBits</dd></div>
+                            <div><dt>Email</dt><dd><a href="mailto:albertomoralesbarroso@gmail.com">albertomoralesbarroso@gmail.com</a></dd></div>
+                            <div><dt>Idiomas</dt><dd>Español nativo · Inglés profesional</dd></div>
+                        </dl>
+                    </div>
+                    <blockquote class="quote">
+                        <span class="quote-mark" aria-hidden="true">“</span>
+                        <p>Traduzco requisitos de negocio en código limpio, seguro y mantenible.</p>
+                        <cite>— De mi perfil</cite>
+                    </blockquote>
                 </div>
             </div>
         </section>
 
-        <!-- ============ PROJECTS ============ -->
+        <!-- ============ 02 · STACK ============ -->
+        <section class="section stack" id="stack">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><b>02</b><i></i>Stack</span>
+                    <h2 class="display">La tabla periódica de mi <em>stack.</em></h2>
+                    <p class="section-sub"><span id="pt-total">43</span> elementos de mi CV, agrupados en 7 familias.
+                        Pasa el ratón o enfoca una casilla para verla en detalle.</p>
+                </div>
+
+                <div class="pt-filters reveal" id="pt-filters" role="toolbar" aria-label="Filtrar por familia"></div>
+
+                <div class="pt-layout reveal">
+                    <div class="pt-grid" id="pt-grid" role="list"></div>
+                    <aside class="pt-detail" id="pt-detail" aria-live="polite">
+                        <div class="pt-detail-top"><span id="ptd-num">Nº 01</span><span id="ptd-sym-sm">Py</span></div>
+                        <div class="pt-detail-sym" id="ptd-sym">Py</div>
+                        <h3 id="ptd-name">Python</h3>
+                        <p class="pt-detail-fam" id="ptd-fam">Lenguajes</p>
+                        <p class="pt-detail-desc" id="ptd-desc"></p>
+                        <h4 class="mono-label">Usado en</h4>
+                        <ul id="ptd-used"></ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 03 · PROYECTOS ============ -->
         <section class="section projects" id="projects">
             <div class="container">
                 <div class="section-head split reveal">
                     <div>
-                        <span class="eyebrow">02 — Proyectos</span>
-                        <h2>Productos que he <em>diseñado, construido</em> y lanzado.</h2>
+                        <span class="eyebrow"><b>03</b><i></i>Proyectos</span>
+                        <h2 class="display">Cosas que he <em>construido.</em></h2>
                     </div>
-                    <p class="section-sub">Tres SaaS personales, de la idea al despliegue. Cada uno resuelve un
-                        problema real de un nicho concreto — y puedes probarlos ahora mismo.</p>
+                    <p class="section-sub">Tres SaaS personales, de la idea al despliegue. Abre cada uno y pruébalo en
+                        vivo: las capturas son reales.</p>
                 </div>
 
-                <div class="project-list">
-
-                    <!-- TraineX -->
-                    <article class="project reveal" style="--accent: #4f7bff; --accent-soft: rgba(79,123,255,.16);">
-                        <a class="project-media" href="https://trainex-web-amber.vercel.app/" target="_blank"
-                            rel="noopener" aria-label="Abrir TraineX en una nueva pestaña">
-                            <div class="browser">
-                                <div class="browser-bar">
-                                    <span class="dots"><i></i><i></i><i></i></span>
-                                    <span class="url">trainex-web-amber.vercel.app</span>
-                                </div>
-                                <img src="./assests/projects/trainex.jpg" alt="Landing de TraineX" loading="lazy"
-                                    width="1440" height="900">
+                <div class="acc reveal" id="acc">
+                    <article class="acc-item open" style="--accent: #4f7bff; --accent-rgb: 79, 123, 255;">
+                        <button class="acc-tab" type="button" aria-expanded="true" aria-controls="acc-p1">
+                            <span class="acc-num">01</span>
+                            <span class="acc-name">TraineX</span>
+                            <span class="acc-plus" aria-hidden="true"></span>
+                        </button>
+                        <div class="acc-panel" id="acc-p1">
+                            <div class="acc-info">
+                                <p class="acc-meta">01 · SaaS · Sports Tech</p>
+                                <h3>TraineX</h3>
+                                <p class="acc-desc">La plataforma todo-en-uno para entrenadores de CrossFit, Fuerza,
+                                    Hyrox y Powerlifting. Sustituye el caos de Excel y WhatsApp por un único panel.</p>
+                                <ul class="acc-points">
+                                    <li>Dashboard de adherencia y atletas en riesgo</li>
+                                    <li>Constructor de entrenos: AMRAP, EMOM, For Time</li>
+                                    <li>Librería de +100 ejercicios con vídeo</li>
+                                    <li>Chat en tiempo real y pagos con Stripe</li>
+                                </ul>
+                                <div class="tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>Stripe</span><span>PWA</span></div>
+                                <a class="acc-link" href="https://trainex-web-amber.vercel.app/" target="_blank"
+                                    rel="noopener">Ver TraineX en vivo <span class="arr">↗</span></a>
                             </div>
-                            <span class="media-cta">Visitar sitio <span class="arr">↗</span></span>
-                        </a>
-                        <div class="project-info">
-                            <div class="project-top">
-                                <span class="project-index">01</span>
-                                <span class="project-cat">SaaS · Sports Tech</span>
-                            </div>
-                            <h3>TraineX</h3>
-                            <p class="project-tagline">La plataforma todo-en-uno para entrenadores de CrossFit, Fuerza,
-                                Hyrox y Powerlifting.</p>
-                            <p class="project-desc">Sustituye el caos de Excel y WhatsApp por un único panel: gestión de
-                                atletas, constructor de programas (AMRAP, EMOM, For Time…), analíticas de adherencia y
-                                retención, chat en tiempo real y control de cobros.</p>
-                            <ul class="project-highlights">
-                                <li>Dashboard con métricas de adherencia y detección de atletas en riesgo</li>
-                                <li>Constructor de entrenamientos y librería de +100 ejercicios con vídeo</li>
-                                <li>Mensajería en tiempo real y gestión de pagos con Stripe</li>
-                            </ul>
-                            <div class="tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>Stripe</span><span>PWA</span></div>
-                            <a class="project-link" href="https://trainex-web-amber.vercel.app/" target="_blank"
-                                rel="noopener">Ver TraineX en vivo <span class="arr">↗</span></a>
+                            <a class="acc-media" href="https://trainex-web-amber.vercel.app/" target="_blank"
+                                rel="noopener" tabindex="-1" aria-hidden="true">
+                                <span class="browser">
+                                    <span class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">trainex-web-amber.vercel.app</span></span>
+                                    <img src="./assests/projects/trainex.jpg" alt="" loading="lazy" width="1440" height="900">
+                                </span>
+                            </a>
                         </div>
                     </article>
 
-                    <!-- Nucleus -->
-                    <article class="project reverse reveal"
-                        style="--accent: #d9b44a; --accent-soft: rgba(217,180,74,.16);">
-                        <a class="project-media" href="https://nucleus-lac.vercel.app/" target="_blank" rel="noopener"
-                            aria-label="Abrir Nucleus en una nueva pestaña">
-                            <div class="browser">
-                                <div class="browser-bar">
-                                    <span class="dots"><i></i><i></i><i></i></span>
-                                    <span class="url">nucleus-lac.vercel.app</span>
-                                </div>
-                                <img src="./assests/projects/nucleus.jpg" alt="Landing de Nucleus" loading="lazy"
-                                    width="1440" height="900">
+                    <article class="acc-item" style="--accent: #d9b44a; --accent-rgb: 217, 180, 74;">
+                        <button class="acc-tab" type="button" aria-expanded="false" aria-controls="acc-p2">
+                            <span class="acc-num">02</span>
+                            <span class="acc-name">Nucleus</span>
+                            <span class="acc-plus" aria-hidden="true"></span>
+                        </button>
+                        <div class="acc-panel" id="acc-p2">
+                            <div class="acc-info">
+                                <p class="acc-meta">02 · SaaS · Vertical B2B</p>
+                                <h3>Nucleus</h3>
+                                <p class="acc-desc">Software de gestión integral para criadores y núcleos zoológicos:
+                                    genealogía, salud, finanzas y documentación legal en una sola plataforma.</p>
+                                <ul class="acc-points">
+                                    <li>Árbol genealógico y coeficiente de consanguinidad</li>
+                                    <li>Contratos y facturas en PDF con un clic</li>
+                                    <li>Multi-criadero con roles y permisos</li>
+                                    <li>CRM con lista de espera y calendario veterinario</li>
+                                </ul>
+                                <div class="tags"><span>Angular</span><span>TypeScript</span><span>PWA</span><span>RBAC</span><span>PDF</span></div>
+                                <a class="acc-link" href="https://nucleus-lac.vercel.app/" target="_blank"
+                                    rel="noopener">Ver Nucleus en vivo <span class="arr">↗</span></a>
                             </div>
-                            <span class="media-cta">Visitar sitio <span class="arr">↗</span></span>
-                        </a>
-                        <div class="project-info">
-                            <div class="project-top">
-                                <span class="project-index">02</span>
-                                <span class="project-cat">SaaS · Vertical B2B</span>
-                            </div>
-                            <h3>Nucleus</h3>
-                            <p class="project-tagline">Software de gestión integral y profesional para criadores y
-                                núcleos zoológicos.</p>
-                            <p class="project-desc">Digitaliza toda la operativa de un criadero: genealogía y
-                                trazabilidad de cada ejemplar, reproducción y camadas, calendario veterinario, finanzas
-                                y documentación legal generada automáticamente.</p>
-                            <ul class="project-highlights">
-                                <li>Árbol genealógico visual y cálculo del coeficiente de consanguinidad (COI)</li>
-                                <li>Contratos de venta y facturas en PDF autocompletados con un clic</li>
-                                <li>Multi-criadero, equipos con roles y permisos, y CRM con lista de espera</li>
-                            </ul>
-                            <div class="tags"><span>Angular</span><span>TypeScript</span><span>PWA</span><span>RBAC</span><span>PDF</span></div>
-                            <a class="project-link" href="https://nucleus-lac.vercel.app/" target="_blank"
-                                rel="noopener">Ver Nucleus en vivo <span class="arr">↗</span></a>
+                            <a class="acc-media" href="https://nucleus-lac.vercel.app/" target="_blank" rel="noopener"
+                                tabindex="-1" aria-hidden="true">
+                                <span class="browser">
+                                    <span class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">nucleus-lac.vercel.app</span></span>
+                                    <img src="./assests/projects/nucleus.jpg" alt="" loading="lazy" width="1440" height="900">
+                                </span>
+                            </a>
                         </div>
                     </article>
 
-                    <!-- SponsorD -->
-                    <article class="project reveal" style="--accent: #2ee6b6; --accent-soft: rgba(46,230,182,.14);">
-                        <a class="project-media" href="https://sponsor-d.vercel.app/" target="_blank" rel="noopener"
-                            aria-label="Abrir SponsorD en una nueva pestaña">
-                            <div class="browser">
-                                <div class="browser-bar">
-                                    <span class="dots"><i></i><i></i><i></i></span>
-                                    <span class="url">sponsor-d.vercel.app</span>
-                                </div>
-                                <img src="./assests/projects/sponsord.jpg" alt="Landing de SponsorD" loading="lazy"
-                                    width="1440" height="900">
+                    <article class="acc-item" style="--accent: #2ee6b6; --accent-rgb: 46, 230, 182;">
+                        <button class="acc-tab" type="button" aria-expanded="false" aria-controls="acc-p3">
+                            <span class="acc-num">03</span>
+                            <span class="acc-name">SponsorD</span>
+                            <span class="acc-plus" aria-hidden="true"></span>
+                        </button>
+                        <div class="acc-panel" id="acc-p3">
+                            <div class="acc-info">
+                                <p class="acc-meta">03 · IA · Lead Intelligence</p>
+                                <h3>SponsorD</h3>
+                                <p class="acc-desc">Captación de patrocinadores deportivos con IA: lee a diario la web de
+                                    cada empresa, evalúa su encaje con el club y entrega oportunidades listas para
+                                    contactar.</p>
+                                <ul class="acc-points">
+                                    <li>Descubrimiento → enriquecimiento → scoring</li>
+                                    <li>Scoring explicable en 9 dimensiones</li>
+                                    <li>Hechos, inferencias y recomendaciones separados</li>
+                                    <li>Email de contacto redactado por LLMs</li>
+                                </ul>
+                                <div class="tags"><span>React</span><span>Vite</span><span>Tailwind</span><span>LLMs</span><span>Web scraping</span></div>
+                                <a class="acc-link" href="https://sponsor-d.vercel.app/" target="_blank"
+                                    rel="noopener">Ver SponsorD en vivo <span class="arr">↗</span></a>
                             </div>
-                            <span class="media-cta">Visitar sitio <span class="arr">↗</span></span>
-                        </a>
-                        <div class="project-info">
-                            <div class="project-top">
-                                <span class="project-index">03</span>
-                                <span class="project-cat">AI · Lead Intelligence</span>
-                            </div>
-                            <h3>SponsorD</h3>
-                            <p class="project-tagline">Captación de patrocinadores deportivos impulsada por inteligencia
-                                artificial.</p>
-                            <p class="project-desc">Un motor que descubre empresas, lee a diario su web pública y evalúa
-                                su encaje con cada club. Entrega oportunidades priorizadas con el decisor identificado,
-                                el razonamiento por escrito y el email de contacto redactado por IA.</p>
-                            <ul class="project-highlights">
-                                <li>Pipeline automático: descubrimiento → enriquecimiento → señales → scoring</li>
-                                <li>Scoring explicable en 9 dimensiones, separando hechos, inferencias y recomendaciones</li>
-                                <li>Monitorización continua cada 24 h y outreach generado con LLMs</li>
-                            </ul>
-                            <div class="tags"><span>React</span><span>Vite</span><span>Tailwind</span><span>LLMs</span><span>Web scraping</span></div>
-                            <a class="project-link" href="https://sponsor-d.vercel.app/" target="_blank"
-                                rel="noopener">Ver SponsorD en vivo <span class="arr">↗</span></a>
+                            <a class="acc-media" href="https://sponsor-d.vercel.app/" target="_blank" rel="noopener"
+                                tabindex="-1" aria-hidden="true">
+                                <span class="browser">
+                                    <span class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">sponsor-d.vercel.app</span></span>
+                                    <img src="./assests/projects/sponsord.jpg" alt="" loading="lazy" width="1440" height="900">
+                                </span>
+                            </a>
                         </div>
                     </article>
                 </div>
 
-                <div class="projects-more reveal">
-                    <p>Más código, experimentos y proyectos de formación en GitHub.</p>
-                    <a href="https://github.com/AlberCf" target="_blank" rel="noopener" class="btn btn-ghost">
-                        <i class="fa-brands fa-github"></i> github.com/AlberCf
-                    </a>
-                </div>
+                <p class="projects-more reveal">Más código y experimentos en
+                    <a href="https://github.com/AlberCf" target="_blank" rel="noopener">github.com/AlberCf <span class="arr">↗</span></a>
+                </p>
             </div>
         </section>
 
-        <!-- ============ EXPERIENCE ============ -->
+        <!-- ============ 04 · TRAYECTORIA ============ -->
         <section class="section experience" id="experience">
             <div class="container">
-                <div class="section-head reveal">
-                    <span class="eyebrow">03 — Experiencia</span>
-                    <h2>Trayectoria <em>profesional</em>.</h2>
+                <div class="section-head split reveal">
+                    <div>
+                        <span class="eyebrow"><b>04</b><i></i>Trayectoria</span>
+                        <h2 class="display">El camino <em>hasta aquí.</em></h2>
+                    </div>
+                    <p class="section-sub">Formación y experiencia en una sola línea, de lo más antiguo a lo más
+                        reciente. La línea se dibuja mientras bajas.</p>
                 </div>
 
-                <ol class="timeline">
-                    <li class="job reveal">
-                        <div class="job-when">
-                            <span class="date">Jun 2026 — Actualidad</span>
-                            <span class="place">Madrid</span>
-                            <span class="badge-now">Actual</span>
-                        </div>
-                        <div class="job-body">
-                            <h3>AI Developer &amp; Full Stack</h3>
-                            <p class="company">SmartBits Business IT Solutions</p>
-                            <ul>
-                                <li><b>Ciberseguridad y blindaje de código.</b> Auditoría y securización de aplicaciones
-                                    existentes. Desarrollo de herramientas internas —plugins, hooks, skills y
-                                    subagentes autónomos— para escaneo de vulnerabilidades y mitigación de riesgos.</li>
-                                <li><b>Desarrollo AI y refactorización.</b> Modernización de aplicaciones legadas con
-                                    desarrollo asistido por IA (Claude Code, Cursor, Windsurf) y principios de código
-                                    limpio y modular.</li>
-                                <li><b>Full Stack end-to-end.</b> Nuevas funcionalidades en React, Angular y Next.js
-                                    sobre backends en Python, Django REST Framework y FastAPI, partiendo de prototipos de
-                                    Figma.</li>
-                                <li><b>Integración de LLMs.</b> Conexión de OpenAI y Anthropic Claude en productos
-                                    corporativos para automatizar procesos internos.</li>
-                            </ul>
-                            <div class="tags sm"><span>Python</span><span>DRF</span><span>FastAPI</span><span>React</span><span>Angular</span><span>Claude</span></div>
+                <ol class="tl" id="timeline">
+                    <li class="tl-line" aria-hidden="true"><span class="tl-fill" id="tl-fill"></span></li>
+
+                    <li class="tl-item reveal">
+                        <div class="tl-when"><span class="tl-year">2020</span><span class="tl-range">Sep 2020 — Jul 2024</span></div>
+                        <span class="tl-dot" aria-hidden="true"></span>
+                        <div class="tl-body">
+                            <span class="chip">Formación</span>
+                            <h3>Grado en Magisterio de Educación Primaria</h3>
+                            <p class="tl-place">Universidad Antonio Nebrija</p>
                         </div>
                     </li>
 
-                    <li class="job reveal">
-                        <div class="job-when">
-                            <span class="date">Feb 2026 — May 2026</span>
-                            <span class="place">Madrid</span>
-                        </div>
-                        <div class="job-body">
-                            <h3>Data Analyst &amp; Full Stack Developer</h3>
-                            <p class="company">Icon Group</p>
-                            <ul>
-                                <li><b>Arquitectura de datos y ETL.</b> Scripts en Python y Pandas para extraer,
-                                    transformar, limpiar y cargar datos (Excel/CSV) garantizando calidad y coherencia.</li>
-                                <li><b>Bases de datos.</b> Diseño de consultas SQL para estructurar y analizar volúmenes
-                                    de datos empresariales.</li>
-                                <li><b>Full Stack.</b> APIs en FastAPI e interfaces dinámicas en Angular.</li>
-                                <li><b>Integración sectorial.</b> Sincronización de activos de datos críticos vía APIs de
-                                    Salesforce y ServiceNow para Healthcare Solutions.</li>
-                            </ul>
-                            <div class="tags sm"><span>Pandas</span><span>SQL</span><span>FastAPI</span><span>Angular</span><span>Salesforce</span><span>ServiceNow</span></div>
-                        </div>
-                    </li>
-
-                    <li class="job reveal">
-                        <div class="job-when">
-                            <span class="date">Sep 2024 — Jul 2025</span>
-                            <span class="place">Madrid</span>
-                        </div>
-                        <div class="job-body">
+                    <li class="tl-item reveal">
+                        <div class="tl-when"><span class="tl-year">2024</span><span class="tl-range">Sep 2024 — Jul 2025</span></div>
+                        <span class="tl-dot" aria-hidden="true"></span>
+                        <div class="tl-body">
+                            <span class="chip">Experiencia</span>
                             <h3>Profesor de Educación Primaria</h3>
-                            <p class="company">CEIP Enrique Tierno Galván</p>
+                            <p class="tl-place">CEIP Enrique Tierno Galván · Madrid</p>
                             <ul>
                                 <li>Coordinación de grupos y dinámicas de resolución colaborativa de problemas.</li>
-                                <li>Estructurar y transmitir conceptos complejos con claridad — hoy, en documentación y
-                                    presentaciones técnicas.</li>
+                                <li>Estructurar y transmitir conceptos complejos con claridad.</li>
                                 <li>Planificación rigurosa de objetivos y cronogramas, trasladable a metodologías ágiles.</li>
                             </ul>
+                        </div>
+                    </li>
+
+                    <li class="tl-item reveal">
+                        <div class="tl-when"><span class="tl-year">2025</span><span class="tl-range">Sep 2025 — Ene 2026</span></div>
+                        <span class="tl-dot" aria-hidden="true"></span>
+                        <div class="tl-body">
+                            <span class="chip">Formación</span>
+                            <h3>Bootcamp Full Stack Developer</h3>
+                            <p class="tl-place">Upgrade Hub · 180 h intensivas</p>
+                            <ul>
+                                <li>Especialización en Python Avanzado y Django (Nov 2025).</li>
+                                <li>Desarrollo de agentes de IA con LangChain, LangGraph y CrewAI (Nov 2025).</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="tl-item reveal">
+                        <div class="tl-when"><span class="tl-year">2026</span><span class="tl-range">Feb 2026 — May 2026</span></div>
+                        <span class="tl-dot" aria-hidden="true"></span>
+                        <div class="tl-body">
+                            <span class="chip">Experiencia</span>
+                            <h3>Data Analyst &amp; Full Stack Developer</h3>
+                            <p class="tl-place">Icon Group · Madrid</p>
+                            <ul>
+                                <li>ETL con Python y Pandas para extraer, limpiar y cargar datos de Excel y CSV.</li>
+                                <li>Consultas SQL para estructurar y analizar datos empresariales.</li>
+                                <li>APIs en FastAPI e interfaces dinámicas en Angular.</li>
+                                <li>Integración con Salesforce y ServiceNow para Healthcare Solutions.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="tl-item reveal">
+                        <div class="tl-when"><span class="tl-year">2026</span><span class="tl-range">Abr 2026 — May 2026</span></div>
+                        <span class="tl-dot" aria-hidden="true"></span>
+                        <div class="tl-body">
+                            <span class="chip">Formación</span>
+                            <h3>Desarrollo con IA y Spec-Driven Development</h3>
+                            <p class="tl-place">Claude Code · Santiago Hernández</p>
+                        </div>
+                    </li>
+
+                    <li class="tl-item reveal">
+                        <div class="tl-when"><span class="tl-year">2026</span><span class="tl-range">Jun 2026 — Actualidad</span></div>
+                        <span class="tl-dot" aria-hidden="true"></span>
+                        <div class="tl-body">
+                            <span class="chip chip-now">Actual</span>
+                            <h3>AI Developer &amp; Full Stack</h3>
+                            <p class="tl-place">SmartBits Business IT Solutions · Madrid</p>
+                            <ul>
+                                <li>Auditoría y securización de aplicaciones; plugins, hooks, skills y subagentes
+                                    propios para escanear vulnerabilidades.</li>
+                                <li>Refactorización de aplicaciones legadas con desarrollo asistido por IA.</li>
+                                <li>Funcionalidades end-to-end en React, Angular y Next.js sobre Python, DRF y FastAPI.</li>
+                                <li>Integración de OpenAI y Anthropic Claude en productos corporativos.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="tl-item reveal">
+                        <div class="tl-when"><span class="tl-year">2026</span><span class="tl-range">Sep 2026 — Actualidad</span></div>
+                        <span class="tl-dot" aria-hidden="true"></span>
+                        <div class="tl-body">
+                            <span class="chip">En curso</span>
+                            <h3>Linux y Hacking Ético</h3>
+                            <p class="tl-place">S4vitar</p>
                         </div>
                     </li>
                 </ol>
             </div>
         </section>
 
-        <!-- ============ STACK ============ -->
-        <section class="section stack" id="stack">
-            <div class="container">
-                <div class="section-head split reveal">
-                    <div>
-                        <span class="eyebrow">04 — Stack</span>
-                        <h2>Herramientas con las que <em>entrego</em>.</h2>
-                    </div>
-                    <p class="section-sub">Un stack pensado para llevar una idea de la pantalla de Figma a
-                        producción, con IA integrada y seguridad desde el diseño.</p>
-                </div>
-
-                <div class="bento">
-                    <div class="bento-card wide reveal">
-                        <div class="bento-icon"><i class="fa-solid fa-brain"></i></div>
-                        <div class="bento-text">
-                            <h3>AI, agentes y LLMs</h3>
-                            <p>Orquestación de agentes, RAG y subagentes autónomos sobre APIs de OpenAI y Anthropic.</p>
-                        </div>
-                        <div class="chips"><span>LangChain</span><span>LangGraph</span><span>CrewAI</span><span>RAG</span><span>OpenAI API</span><span>Anthropic Claude</span><span>Prompt Engineering</span></div>
-                    </div>
-                    <div class="bento-card reveal">
-                        <div class="bento-icon"><i class="fa-solid fa-server"></i></div>
-                        <h3>Backend</h3>
-                        <div class="chips"><span>Python</span><span>FastAPI</span><span>Django REST</span><span>Node.js</span><span>Nest.js</span></div>
-                    </div>
-                    <div class="bento-card reveal">
-                        <div class="bento-icon"><i class="fa-solid fa-layer-group"></i></div>
-                        <h3>Frontend</h3>
-                        <div class="chips"><span>React</span><span>Next.js</span><span>Angular</span><span>TypeScript</span><span>HTML5 · CSS3</span></div>
-                    </div>
-                    <div class="bento-card reveal">
-                        <div class="bento-icon"><i class="fa-solid fa-database"></i></div>
-                        <h3>Datos</h3>
-                        <div class="chips"><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>Pandas · ETL</span><span>Salesforce API</span><span>ServiceNow API</span></div>
-                    </div>
-                    <div class="bento-card half reveal">
-                        <div class="bento-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                        <h3>Seguridad</h3>
-                        <div class="chips"><span>Auditoría de código</span><span>Escaneo de vulnerabilidades</span><span>JWT</span><span>OAuth2</span></div>
-                    </div>
-                    <div class="bento-card half reveal">
-                        <div class="bento-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                        <h3>Entorno</h3>
-                        <div class="chips"><span>Git · GitHub</span><span>Docker</span><span>CI/CD</span><span>Claude Code</span><span>Cursor</span><span>Figma</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ EDUCATION ============ -->
-        <section class="section education" id="education">
-            <div class="container">
-                <div class="section-head reveal">
-                    <span class="eyebrow">05 — Formación</span>
-                    <h2>Aprendizaje <em>continuo</em>.</h2>
-                </div>
-
-                <div class="edu-grid">
-                    <div class="edu-main reveal">
-                        <div class="edu-item big">
-                            <span class="edu-date">Sep 2025 — Ene 2026</span>
-                            <h3>Bootcamp Full Stack Developer</h3>
-                            <p>Upgrade Hub · 180 h intensivas</p>
-                        </div>
-                        <div class="edu-item big">
-                            <span class="edu-date">Sep 2020 — Jul 2024</span>
-                            <h3>Grado en Magisterio de Educación Primaria</h3>
-                            <p>Universidad Antonio Nebrija</p>
-                        </div>
-                    </div>
-                    <ul class="edu-list reveal">
-                        <li><span class="edu-date">Sep 2026 — Actualidad</span><b>Linux y Hacking Ético</b><span>S4vitar</span></li>
-                        <li><span class="edu-date">May 2026</span><b>Spec-Driven Development con Claude Code</b><span>Santiago Hernández</span></li>
-                        <li><span class="edu-date">Abr 2026</span><b>Desarrollo con IA · Claude Code</b><span>Santiago Hernández</span></li>
-                        <li><span class="edu-date">Nov 2025</span><b>Agentes de IA con Python</b><span>LangChain · LangGraph · CrewAI</span></li>
-                        <li><span class="edu-date">Nov 2025</span><b>Python Avanzado y Django</b><span>Formación técnica especializada</span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ CONTACT ============ -->
+        <!-- ============ 05 · CONTACTO ============ -->
         <section class="section contact" id="contact">
-            <div class="container">
-            <div class="contact-grid">
+            <div class="container contact-grid">
                 <div class="contact-copy reveal">
-                    <span class="eyebrow">06 — Contacto</span>
-                    <h2>¿Construimos algo <em>juntos</em>?</h2>
-                    <p>Abierto a nuevas oportunidades, colaboraciones y proyectos con IA. Movilidad geográfica.
-                        Respondo en menos de 24 h.</p>
+                    <span class="eyebrow"><b>05</b><i></i>Contacto</span>
+                    <h2 class="display contact-title">Construyamos algo <em>juntos.</em></h2>
 
-                    <div class="contact-links">
-                        <a href="mailto:albertomoralesbarroso@gmail.com" class="contact-link">
-                            <i class="fa-regular fa-envelope"></i>
-                            <span><small>Email</small>albertomoralesbarroso@gmail.com</span>
-                            <span class="arr">↗</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/albertofsd/" target="_blank" rel="noopener"
-                            class="contact-link">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                            <span><small>LinkedIn</small>/in/albertofsd</span>
-                            <span class="arr">↗</span>
-                        </a>
-                        <a href="https://github.com/AlberCf" target="_blank" rel="noopener" class="contact-link">
-                            <i class="fa-brands fa-github"></i>
-                            <span><small>GitHub</small>/AlberCf</span>
-                            <span class="arr">↗</span>
-                        </a>
+                    <a href="mailto:albertomoralesbarroso@gmail.com" class="btn btn-primary"><i
+                            class="fa-regular fa-envelope"></i> Escríbeme</a>
+
+                    <p class="mono-label contact-label">Escríbeme a</p>
+                    <div class="mail-row">
+                        <a href="mailto:albertomoralesbarroso@gmail.com" class="mail-big">albertomoralesbarroso@gmail.com</a>
+                        <button type="button" class="copy-btn" id="copy-mail"
+                            data-mail="albertomoralesbarroso@gmail.com">Copiar</button>
                     </div>
+                    <div class="contact-chips">
+                        <a href="https://www.linkedin.com/in/albertofsd/" target="_blank" rel="noopener">LinkedIn <span class="arr">↗</span></a>
+                        <a href="https://github.com/AlberCf" target="_blank" rel="noopener">GitHub <span class="arr">↗</span></a>
+                        <a href="./assests/Alberto_Morales_CV_AI_Full_Stack.pdf" download>CV <i class="fa-solid fa-arrow-down"></i></a>
+                    </div>
+
+                    <a href="mailto:albertomoralesbarroso@gmail.com" class="stamp" aria-label="Escríbeme un email">
+                        <svg viewBox="0 0 120 120" aria-hidden="true">
+                            <defs><path id="stampPath" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0" /></defs>
+                            <text><textPath href="#stampPath">ESCRÍBEME · DISPONIBLE · ESCRÍBEME · DISPONIBLE ·</textPath></text>
+                        </svg>
+                        <span class="stamp-core"><span class="arr">↗</span></span>
+                    </a>
                 </div>
 
                 <form id="contact-form" action="https://formspree.io/f/xdaajlpz" method="POST"
@@ -547,7 +588,6 @@
                     <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
                 </form>
             </div>
-            </div>
         </section>
     </main>
 
@@ -566,7 +606,7 @@
         </div>
     </footer>
 
-    <script src="./JavaScripts/script.js?v=11"></script>
+    <script src="./JavaScripts/script.js?v=13"></script>
 </body>
 
 </html>
