@@ -689,9 +689,9 @@ em {
 
 .hero-inner {
     display: grid;
-    grid-template-columns: 1.45fr 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 56px;
+    gap: 40px;
     width: 100%;
 }
 
@@ -753,7 +753,7 @@ em {
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 5.6vw, 4.6rem);
+    font-size: clamp(2.5rem, 4.6vw, 4rem);
     font-weight: 600;
     line-height: 0.98;
     letter-spacing: -0.045em;
@@ -826,15 +826,25 @@ em {
 
 /* Retrato */
 .hero-visual {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 16px;
+}
+
+.cards-col {
+    position: relative;
+    z-index: 3;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .portrait {
     position: relative;
-    width: 200px;
+    width: 196px;
     aspect-ratio: 1;
-    margin: 56px 0;
+    margin: 64px 0;
 }
 
 /* Halo de luz que "respira" detrás del retrato */
@@ -909,7 +919,7 @@ em {
     position: absolute;
     border-radius: 50%;
     border: 1px dashed rgba(255, 255, 255, 0.13);
-    animation: rotate 28s linear infinite;
+    animation: rotate 14s linear infinite;
     pointer-events: none;
 }
 
@@ -920,7 +930,7 @@ em {
 .orbit-2 {
     inset: -50px;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    animation-duration: 44s;
+    animation-duration: 22s;
     animation-direction: reverse;
 }
 
@@ -987,74 +997,127 @@ em {
 }
 
 .float-card {
-    position: absolute;
-    z-index: 3;
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-    border-radius: 14px;
+    gap: 11px;
+    width: max-content;
+    padding: 7px 18px 7px 7px;
+    border-radius: 999px;
+    white-space: nowrap;
+    animation: float 6s ease-in-out infinite;
     border: 1px solid var(--border-strong);
     background: rgba(16, 18, 25, 0.72);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.8);
-    animation: float 7s ease-in-out infinite;
-    width: max-content;
-    white-space: nowrap;
+    --glow: 100, 255, 218;
+    transition: border-color 0.6s var(--ease), box-shadow 0.6s var(--ease), background 0.6s var(--ease);
 }
 
 .float-card i {
     display: grid;
     place-items: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 10px;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
     background: var(--brand-soft);
     color: var(--brand);
     font-size: 0.9rem;
+    transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease);
+}
+
+/* Encendida por el punto de órbita (verde) o por el de la órbita exterior (violeta) */
+.float-card.lit-alt {
+    --glow: 124, 140, 255;
+}
+
+.float-card.lit {
+    border-color: rgba(var(--glow), 0.75);
+    background:
+        radial-gradient(120% 140% at 0% 50%, rgba(var(--glow), 0.16), transparent 70%),
+        rgba(16, 18, 25, 0.82);
+    box-shadow:
+        0 0 0 1px rgba(var(--glow), 0.25),
+        0 0 28px -4px rgba(var(--glow), 0.55),
+        0 20px 40px -20px rgba(0, 0, 0, 0.8);
+    transition-duration: 0.25s;
+}
+
+.float-card.lit i {
+    transform: scale(1.08);
+    box-shadow: 0 0 16px -2px rgba(var(--glow), 0.8);
 }
 
 .float-card div {
     display: flex;
     flex-direction: column;
+    gap: 2px;
+    min-width: 0;
     line-height: 1.25;
 }
 
 .float-card b {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 600;
 }
 
 .float-card span {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     color: var(--text-2);
 }
 
-.fc-1 {
-    top: -14px;
-    right: calc(100% + 22px);
-}
-
-.fc-2 {
-    top: 42%;
-    left: calc(100% + 22px);
-    animation-delay: -2.5s;
-}
-
-.fc-2 i {
+/* Columna derecha en violeta */
+.float-card.alt i {
     background: rgba(124, 140, 255, 0.15);
     color: var(--brand-2);
 }
 
-.fc-3 {
-    bottom: -18px;
-    right: calc(100% + 4px);
-    animation-delay: -5s;
+/* Columnas en arco: arriba y abajo pegadas al círculo, la del medio más separada */
+.cards-left {
+    align-items: flex-end;
 }
 
-.fc-3 .dot-live {
-    margin: 0 4px 0 6px;
+.cards-right {
+    align-items: flex-start;
+}
+
+.cards-left .float-card:nth-child(odd) {
+    margin-right: -52px;
+}
+
+.cards-left .float-card:nth-child(2) {
+    margin-right: 16px;
+}
+
+.cards-right .float-card:nth-child(odd) {
+    margin-left: -52px;
+}
+
+.cards-right .float-card:nth-child(2) {
+    margin-left: 16px;
+}
+
+/* Cada tarjeta flota a su ritmo */
+.cards-left .float-card:nth-child(2) {
+    animation-delay: -2s;
+}
+
+.cards-left .float-card:nth-child(3) {
+    animation-delay: -4s;
+}
+
+.cards-right .float-card:nth-child(1) {
+    animation-delay: -1s;
+}
+
+.cards-right .float-card:nth-child(2) {
+    animation-delay: -3s;
+}
+
+.cards-right .float-card:nth-child(3) {
+    animation-delay: -5s;
 }
 
 @keyframes float {
@@ -1065,7 +1128,7 @@ em {
     }
 
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-7px);
     }
 }
 
@@ -2035,36 +2098,6 @@ em {
         gap: 72px;
     }
 
-    .hero-visual {
-        order: -1;
-        justify-content: flex-start;
-    }
-
-    .portrait {
-        width: 170px;
-        margin: 50px 0 40px 50px;
-    }
-
-    .fc-1,
-    .fc-2,
-    .fc-3 {
-        right: auto;
-        left: calc(100% + 64px);
-    }
-
-    .fc-1 {
-        top: -8px;
-    }
-
-    .fc-2 {
-        top: 38%;
-        left: calc(100% + 84px);
-    }
-
-    .fc-3 {
-        top: auto;
-        bottom: -8px;
-    }
 
     .project,
     .project.reverse {
@@ -2114,6 +2147,104 @@ em {
 @media (max-width: 1080px) {
     .nav-clock {
         display: none;
+    }
+}
+
+/* Por debajo de 1200px el retrato y sus tarjetas pasan arriba, a lo ancho */
+@media (max-width: 1200px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 64px;
+    }
+
+    .hero-visual {
+        order: -1;
+        width: 100%;
+        max-width: 760px;
+        margin: 0 auto;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        gap: 34px;
+    }
+
+    .portrait {
+        width: 180px;
+    }
+}
+
+/* Móvil: también alrededor de la foto, con cápsulas compactas (icono + título) */
+@media (max-width: 700px) {
+    .hero-visual {
+        gap: 2px;
+    }
+
+    .portrait {
+        width: 108px;
+        margin: 72px 0;
+    }
+
+    .cards-col {
+        gap: 34px;
+    }
+
+    .orbit-1 {
+        inset: -12px;
+    }
+
+    .orbit-2 {
+        inset: -26px;
+    }
+
+    .portrait-ring {
+        inset: -4px;
+    }
+
+    .float-card {
+        gap: 6px;
+        padding: 4px 11px 4px 4px;
+    }
+
+    .float-card i {
+        width: 26px;
+        height: 26px;
+        font-size: 0.66rem;
+    }
+
+    .float-card b {
+        font-size: 0.7rem;
+    }
+
+    .float-card span {
+        display: none;
+    }
+
+    .cards-left .float-card:nth-child(odd) {
+        margin-right: -38px;
+    }
+
+    .cards-right .float-card:nth-child(odd) {
+        margin-left: -38px;
+    }
+
+    .cards-left .float-card:nth-child(2) {
+        margin-right: 2px;
+    }
+
+    .cards-right .float-card:nth-child(2) {
+        margin-left: 2px;
+    }
+}
+
+@media (max-width: 350px) {
+    .portrait {
+        width: 92px;
+    }
+
+    .float-card b {
+        font-size: 0.64rem;
+    }
+
+    .float-card {
+        padding-right: 8px;
     }
 }
 
@@ -2300,51 +2431,6 @@ em {
 
     .hero-inner {
         gap: 48px;
-    }
-
-    .portrait {
-        width: 120px;
-        margin: 30px 0 24px 16px;
-    }
-
-    .orbit-1 {
-        inset: -14px;
-    }
-
-    .orbit-2 {
-        display: none;
-    }
-
-    .portrait-ring {
-        inset: -4px;
-    }
-
-    .fc-1,
-    .fc-2,
-    .fc-3 {
-        left: calc(100% + 28px);
-    }
-
-    .fc-1 {
-        top: -18px;
-    }
-
-    .fc-2 {
-        top: 34%;
-        left: calc(100% + 40px);
-    }
-
-    .fc-3 {
-        bottom: -18px;
-    }
-
-    .float-card {
-        padding: 9px 12px;
-    }
-
-    .float-card i {
-        width: 28px;
-        height: 28px;
     }
 
     .hero-title {

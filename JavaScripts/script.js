@@ -86,6 +86,44 @@ document.addEventListener('DOMContentLoaded', () => {
         revealEls.forEach(el => el.classList.add('in'));
     }
 
+    // Las tarjetas del retrato se iluminan cuando un punto de órbita pasa por delante
+    const disc = document.querySelector('.portrait-disc');
+    if (disc && !reduceMotion && 'IntersectionObserver' in window) {
+        const dots = [...document.querySelectorAll('.orbit i')];
+        const cards = [...document.querySelectorAll('.float-card')];
+        const center = (r) => [r.left + r.width / 2, r.top + r.height / 2];
+        const angleDiff = (a, b) => {
+            const d = Math.abs(a - b) % (2 * Math.PI);
+            return d > Math.PI ? 2 * Math.PI - d : d;
+        };
+        let rafId = 0;
+
+        const tickGlow = () => {
+            const [cx, cy] = center(disc.getBoundingClientRect());
+            const dotAngles = dots
+                .filter(d => d.offsetParent)
+                .map(d => {
+                    const [x, y] = center(d.getBoundingClientRect());
+                    return { a: Math.atan2(y - cy, x - cx), alt: d.parentElement.classList.contains('orbit-2') };
+                });
+
+            cards.forEach(card => {
+                if (!card.offsetParent) return;
+                const [x, y] = center(card.getBoundingClientRect());
+                const a = Math.atan2(y - cy, x - cx);
+                const hit = dotAngles.find(d => angleDiff(d.a, a) < 0.3);
+                card.classList.toggle('lit', Boolean(hit));
+                card.classList.toggle('lit-alt', Boolean(hit && hit.alt));
+            });
+            rafId = requestAnimationFrame(tickGlow);
+        };
+
+        new IntersectionObserver(([entry]) => {
+            cancelAnimationFrame(rafId);
+            if (entry.isIntersecting) rafId = requestAnimationFrame(tickGlow);
+        }).observe(disc);
+    }
+
     // Enlace activo en la navegación
     const navItems = document.querySelectorAll('.nav-item');
     const sections = [...navItems].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
